@@ -82,3 +82,9 @@ Another idea - could you package samples of varying sequence lengths and then pa
 I'm thinking for this first version, I should keep things very simple and just build out the sequencing code. In the future, I can pre-process.
 
 Also just learned what a generator function is - chat GPT is really better than google for learning. I would have learned so so so much faster with chat GPT explaining things for me. I think it raises the bar in what you can be expected to accomplish. 
+
+OK - done for the day. I set up the repo and wrapped my head around the MVP.
+
+The next step I think is to figure out how to clone this repo to my local machine so I can fuck around in pycharm and jupyter notebooks. I need to do that to understand what to code is doing better. 
+
+I am terrified of Git so that will be a tomorrow thing. This has been fun, I hope I can keep the momentum going!!
