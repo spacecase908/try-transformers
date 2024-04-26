@@ -55,3 +55,30 @@ In any case, I can write an application that intakes some set of test paramters 
 The risks I foresee are this is gonna be a lot of work (fun!), it will go too slow, and it will crash and be hard to audit
 
 Well - one way to find out!!
+
+## 3/26/2024
+
+I understand the input format!! This was probably the most confusing thing last time - what do I need to do to go from "I have this data" to "use it to predict".
+
+This blog was very helpful in visualizing the problem-> https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/
+
+There are three inputs:
+1. Samples - for my project, this would be each "bactch" of sequences
+2. Time Steps - which point in the seuquence we are at
+3. Features - each sensor reading at a given step in the sequence
+
+This makes so much sense haha
+
+So - this is very clarifying. What I need to do:
+
+1. Choose the features to include
+2. Slice them into T x F arrays
+3. Package the arrays together into a S x T x F array
+
+An interesting question is adding more features. The beuty of ML is supposed to be that it magically figures this out for you - but this blog post shows that in some cases lagged data improves performance. In theory, RNNs should be able to capture any inter-temporal relationships. This would be a very good future experiment.
+
+Another idea - could you package samples of varying sequence lengths and then pad them? Why? Perhaps there is additional information to be gained by looking at different sequence lengths? If we find that varying sequence length has any predictive power, then perhaps we can get additional information by considering the same sample but focusing on different lenghts. The fact that lagging helps at all seems to suggest this might too. Could also lead to over-fitting.
+
+I'm thinking for this first version, I should keep things very simple and just build out the sequencing code. In the future, I can pre-process.
+
+Also just learned what a generator function is - chat GPT is really better than google for learning. I would have learned so so so much faster with chat GPT explaining things for me. I think it raises the bar in what you can be expected to accomplish. 
